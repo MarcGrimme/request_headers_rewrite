@@ -46,7 +46,18 @@ module RequestHeadersRewrite
           )
         end
       end
+
+      context '#eql?' do
+        subject do
+          described_class.new('X-Forwarded-For-2', 'X-Forwarded-For')
+        end
+        it do
+          expect(subject).to eql(described_class
+            .new('X-Forwarded-For-2', 'X-Forwarded-For'))
+        end
+      end
     end
+
     describe MoveRule do
       context '#apply!' do
         it 'moves X-Forwarded-For-2 env to X-Forwarded-For env' do

@@ -19,7 +19,7 @@ end
 # Run the rdoc task to generate rdocs for this gem
 require 'rdoc/task'
 RDoc::Task.new do |rdoc|
-  require File.expand_path('../lib/request_headers_rewrite/version', __FILE__)
+  require File.expand_path('lib/request_headers_rewrite/version', __dir__)
   version = RequestHeadersRewrite::VERSION
 
   rdoc.rdoc_dir = 'rdoc'

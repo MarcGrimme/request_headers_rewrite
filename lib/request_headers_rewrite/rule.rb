@@ -3,9 +3,9 @@
 module RequestHeadersRewrite
   class Rule # :nodoc:
     attr_reader :from, :to
-    def initialize(from, to, options = {})
+    def initialize(from, whereto, options = {})
       @from = from
-      @to = to
+      @to = whereto
       @options = options
     end
 
@@ -44,15 +44,27 @@ module RequestHeadersRewrite
     def apply!(env)
       from = header_from(env)
       to = header_to(env)
-      to_sep = if to; to + ','; else ''; end
-      from_sep = if from && to; from + ','; elsif from; from; else ''; end
       env[header_attr(@to)] = if append?
-                                to_sep + (from || '')
+                                to_sep(to) + (from || '')
                               elsif overwrite?
                                 from
                               else
-                                from_sep + (to || '')
+                                from_sep(from, to) + (to || '')
                               end
+    end
+
+    private
+
+    def from_sep(from, whereto)
+      if from && whereto
+        from + ','
+      else
+        from
+      end
+    end
+
+    def to_sep(whereto)
+      whereto + ','
     end
   end
 

@@ -1,4 +1,6 @@
-# RequestHeaderRewrite [![build status](https://travis-ci.org/MarcGrimme/request_headers_rewrite.png?branch=master)](https://travis-ci.org/MarcGrimme/request_headers_rewrite) [![Code Climate](https://codeclimate.com/github/MarcGrimme/request_headers_rewrite.png)](https://codeclimate.com/github/MarcGrimme/request_headers_rewrite)
+# RequestHeaderRewrite
+[![Gem Version](https://badge.fury.io/rb/request_headers_rewrite.svg)](https://badge.fury.io/rb/request_headers_rewrite)
+[![Build Status](https://api.travis-ci.org/MarcGrimme/request_headers_rewrite.png?branch=master)](https://secure.travis-ci.org/MarcGrimme/request_headers_rewrite)
 
 ## WORDS OF WARNING - PLEASE READ BEFORE YOU GO FURTHER
 

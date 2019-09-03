@@ -14,7 +14,7 @@ module RequestHeadersRewrite
     # will be called from the middleware for each request and rewrite the
     # header according to the ruleset if a ruleset is given
     def call(env)
-      @rule_set.apply!(env) if @rule_set
+      @rule_set&.apply!(env)
       @app.call(env)
     end
   end
