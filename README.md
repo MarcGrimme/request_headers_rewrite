@@ -1,6 +1,10 @@
 # RequestHeaderRewrite
 [![Gem Version](https://badge.fury.io/rb/request_headers_rewrite.svg)](https://badge.fury.io/rb/request_headers_rewrite)
 [![Build Status](https://api.travis-ci.org/MarcGrimme/request_headers_rewrite.png?branch=master)](https://secure.travis-ci.org/MarcGrimme/request_headers_rewrite)
+[![Depfu](https://badges.depfu.com/badges/48a6c1c7c649f62eede6ffa2be843180/count.svg)](https://depfu.com/github/MarcGrimme/request_headers_rewrite?project_id=6900)
+[![Coverage](https://marcgrimme.github.io/request_headers_rewrite/badges/coverage_badge_total.svg)](https://marcgrimme.github.io/request_headers_rewrite/coverage/index.html)
+[![RubyCritic](https://marcgrimme.github.io/request_headers_rewrite/badges/rubycritic_badge_score.svg)](https://marcgrimme.github.io/request_headers_rewrite/tmp/rubycritic/overview.html)
+
 
 ## WORDS OF WARNING - PLEASE READ BEFORE YOU GO FURTHER
 
