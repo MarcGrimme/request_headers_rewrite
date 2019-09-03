@@ -14,6 +14,26 @@ module RequestHeadersRewrite
                                 'CONTENT_TYPE' => 'text/plain')
     end
 
+    context 'initialize by ruleset' do
+      subject do
+        RequestHeadersRewrite.configure do |rule_set|
+          rule_set.copy('X-Forwarded-For-2', 'X-Forwarded-For')
+        end
+        described_class.new(app)
+      end
+
+      before { subject.call(env) }
+
+      it 'X-Forwared-For-2 => X-Forwared-For' do
+        expect(env).to include(
+          'HTTP_X_FORWARDED_FOR_1' => '1234',
+          'HTTP_X_FORWARDED_FOR_2' => '123',
+          'HTTP_X_FORWARDED_FOR' => '123,12',
+          'CONTENT_TYPE' => 'text/plain'
+        )
+      end
+    end
+
     context 'one copy rule' do
       subject do
         described_class.new(app) do

@@ -13,7 +13,9 @@ class MockRackApp
     [200, { 'Content-Type' => 'text/plain' }, ['OK']]
   end
 
+  # :nocov:
   def [](key)
     @env[key]
   end
+  # :nocov:
 end

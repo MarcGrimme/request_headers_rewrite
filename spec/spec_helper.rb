@@ -6,17 +6,19 @@
 # is run in ruby 1.9
 if ENV['COVERAGE']
   require 'simplecov'
-  SimpleCov.start do
-    # Remove the spec folder from coverage. By default all code files are
-    # included.
-    # For more config options see
-    # https://github.com/colszowka/simplecov
-    add_filter File.expand_path('../../spec', __FILE__)
-  end
-end
+  require 'simplecov_small_badge'
 
-# Modify load path so you can require 'ogstasher directly.
-$LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
+  SimpleCov.start do
+    SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+      [
+        SimpleCov::Formatter::HTMLFormatter,
+        SimpleCovSmallBadge::Formatter
+      ]
+    )
+  end
+
+  SimpleCov.minimum_coverage 100
+end
 
 require 'rubygems'
 # Loads bundler setup tasks. Now if I run spec without installing gems then it
