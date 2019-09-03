@@ -24,6 +24,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 3.8'
   gem.add_development_dependency 'rubocop', '~> 0.65'
   gem.add_development_dependency 'rubycritic', '~> 4.1'
+  gem.add_development_dependency 'rubycritic-small-badge', '~> 0.2.1'
   gem.add_development_dependency 'simplecov', '~> 0.17'
   gem.add_development_dependency 'simplecov-small-badge', '~> 0.2.3'
 end
